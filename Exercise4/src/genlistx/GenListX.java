@@ -24,7 +24,7 @@ public class GenListX {
 				current = current.next;
 			current.next = node;
 		}
-
+		size++;
 	}
 
 	// returns the number of objects in the list
@@ -35,11 +35,11 @@ public class GenListX {
 	// returns a reference to object number "index" from the list
 	// throws IndexOutOfBoundException
 	public Object get(int index) throws IndexOutOfBoundsException {
-		if (index <= 0 || size <= index)
+		if (index < 0 || size <= index)
 			throw new IndexOutOfBoundsException("Error (get): Invalid index: "
 					+ index);
 
-		Node current = list.next;
+		Node current = list;
 		for (int i = 0; i < index; i++) {
 			current = current.next;
 		}
@@ -88,10 +88,10 @@ public class GenListX {
 				current = current.next;
 			}
 			node = current.next;
-			current.next = current.next.next;
+			current.next = node.next;
 		}
 		size--;
-		return current.data;
+		return node.data;
 	}
 
 	// //////////////////////////////////////
