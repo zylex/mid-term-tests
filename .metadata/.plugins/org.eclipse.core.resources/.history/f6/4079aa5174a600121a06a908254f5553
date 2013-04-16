@@ -1,0 +1,5 @@
+package cph.business;
+
+public interface ExchangeRate {
+
+}

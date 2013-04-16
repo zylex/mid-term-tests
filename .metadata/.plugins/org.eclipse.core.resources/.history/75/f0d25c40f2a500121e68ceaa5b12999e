@@ -1,0 +1,78 @@
+package genlistx.tests;
+
+import static org.junit.Assert.*;
+import genlistx.GenListX;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class SizeIsGreaterThanZeroTestsTest {
+
+	private GenListX testList;
+	
+	@Before
+	public void setUp() throws Exception {
+		testList = new GenListX();
+		testList.add("Object 1");
+		testList.add("Object 2");
+		assertTrue(testList.size() == 2);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testAddAtIndex_success() {
+		int index = 1;
+		assertTrue(index >= 0);
+		assertTrue(index <= testList.size() - 1);
+		testList.add(index, "Another Object");
+		assertTrue(testList.size() == 3);
+		Object obj = testList.remove(1);
+		assertTrue(obj instanceof String);
+		String result = (String) obj;
+		assertTrue(result.equals("Another Object"));
+	}
+
+	@Test (expected = IndexOutOfBoundsException.class)
+	public void testAddAtIndex_indexLessThanZero_failure() {
+		testList.add(-1, new Object());
+	}
+
+	@Test (expected = IndexOutOfBoundsException.class)
+	public void testAddAtIndex_indexGreaterThanSize_failure() {
+		int index = 2;
+		assertTrue(index > testList.size() - 1);
+		testList.add(index, new Object());
+	}
+	
+	@Test
+	public void testRemove_sucess() {
+		int index = 1;
+		assertTrue(index >= 0);
+		assertTrue(index <= testList.size() - 1);
+		Object obj = testList.remove(index);
+		assertTrue(obj instanceof String);
+		String result = (String) obj;
+		assertTrue(result.equals("Object 2"));
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testRemove_indexLessThanZero_failure() {
+		testList.remove(-1);
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testRemove_indexGreaterThanSize_failure() {
+		int index = 2;
+		assertTrue(index > testList.size() - 1);
+		testList.remove(index);
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,57 @@
+package genlistx.tests;
+
+import static org.junit.Assert.*;
+import genlistx.GenListX;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+
+public class SizeIsGreaterThanZeroTestsTest {
+
+	private GenListX testList;
+	
+	@Before
+	public void setUp() throws Exception {
+		testList = new GenListX();
+		testList.add("Object 1");
+		testList.add("Object 2");
+		assertTrue(testList.size() == 2);
+	}
+
+	@Test
+	public void testAddObject_successfullyAdded() throws Exception {
+		testList.add("Another Object");
+		assertTrue(testList.size() == 3);
+	}
+
+	@Test (expected = IndexOutOfBoundsException.class)
+	public void testAddObject_indexOutOfBounds() {
+		testList.add(-1, new Object());
+	}
+
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testRemove_indexOutOfBounds() {
+		testList.remove(-1);
+	}
+	
+	@Test
+	public void testRemove_successfullyRemoved_sizeWasGreaterThanOne() {
+		testList.remove(0);
+		assertTrue(testList.size() == 1);
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testRemove_successfullyRemoved_sizeWasOne() {
+		testList.remove(0);
+		assertTrue(testList.size() == 1);
+		testList.remove(0);
+		assertTrue(testList.size() == 0);
+		
+	}
+	
+	
+	
+
+}

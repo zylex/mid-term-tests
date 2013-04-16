@@ -1,0 +1,17 @@
+package dk.cphbusiness;
+
+public class Player {
+	private Die[] dice;
+	private Board board;
+	private Piece piece;
+	
+	public Player(Die[] dice, Board board, Piece piece) {
+		this.dice = dice;
+		this.board = board;
+		this.piece = piece;
+	}
+	
+	public void takeTurn() {
+		
+	}
+}

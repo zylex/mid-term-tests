@@ -1,0 +1,46 @@
+import static org.junit.Assert.*;
+
+import org.jmock.Expectations;
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+
+import cph.business.Currency;
+import cph.business.ExchangeRate;
+
+
+public class CurrencyTest {
+	
+	Currency currency;
+	@Rule public JUnitRuleMockery context = new JUnitRuleMockery(); 
+
+	@Before
+	public void setUp() throws Exception {		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testToEuros() {
+		double expectedAmount = 75;
+		String expectedUnits = "EUR";
+		
+		currency = new Currency(100, "USD");
+		
+		final ExchangeRate converter = context.mock(ExchangeRate.class);
+		
+		context.checking(new Expectations() {{
+			oneOf(converter).getRate("USD", "EUR"); will(returnValue(0.75));
+		}});
+		
+		Currency result = currency.toEuros(converter);
+		
+		assertTrue(result.getAmount() == expectedAmount);
+		assertTrue(result.getUnits().equals(expectedUnits));
+	}
+
+}

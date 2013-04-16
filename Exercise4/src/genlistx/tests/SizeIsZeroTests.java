@@ -19,18 +19,26 @@ public class SizeIsZeroTests {
 
 	@Test
 	public void testAddObject_successfullyAdded() {
-		testList.add(0, new Object());
+		testList.add(0, "Object");
 		assertTrue(testList.size() > 0);
-		
+		Object obj = testList.get(0);
+		assertTrue(obj instanceof String);
+		String str = (String) obj;
+		assertTrue(str.equals("Object"));
 	}
 	
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testAddObject_indexOutOfBounds() {
-		testList.add(-1, new Object());
+		testList.add(1, new Object());
 	}
 	
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testFetchObject_indexOutOfBounds_sizeWasZero() {
 		testList.get(0);
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testRemoveObject_indexOutOfBounds_sizeWasZero() {
+		testList.remove(0);
 	}
 }

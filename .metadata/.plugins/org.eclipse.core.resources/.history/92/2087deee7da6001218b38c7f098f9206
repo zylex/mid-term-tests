@@ -1,0 +1,9 @@
+package dk.cphbusiness;
+
+public class Player {
+	private Die[] dice;
+	private Board board;
+	private Piece piece;
+	
+	
+}

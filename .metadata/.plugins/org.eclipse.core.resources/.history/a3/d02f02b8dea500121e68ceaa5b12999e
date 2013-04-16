@@ -1,0 +1,46 @@
+package genlistx.tests;
+
+import static org.junit.Assert.*;
+import genlistx.GenListX;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+public class SizeIsGreaterThanZeroTestsTest {
+
+	private GenListX testList;
+	
+	@Before
+	public void setUp() throws Exception {
+		testList = new GenListX();
+		testList.add(new Object());
+		assertTrue(testList.size() > 0);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testSize() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGet() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddIntObject() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemove() {
+		fail("Not yet implemented");
+	}
+
+}

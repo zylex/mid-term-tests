@@ -71,7 +71,7 @@ public class GenListX {
 	}
 
 	public Object remove(int index) throws IndexOutOfBoundsException {
-		if (index < 0 || size <= index)
+		if (index < 0 || size < index)
 			throw new IndexOutOfBoundsException(
 					"Error (remove): Invalid index: " + index);
 		Node node;

@@ -1,0 +1,44 @@
+package genlistx.tests;
+
+import static org.junit.Assert.*;
+import genlistx.GenListX;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class RetrieveDataTest {
+	
+	private GenListX testList;
+
+	@Before
+	public void setUp() throws Exception {
+		testList = new GenListX();
+		testList.add("Some Object");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		
+	}
+
+	@Test
+	public void testGet_success() {
+		Object result = testList.get(0);
+		assertTrue(result instanceof String);
+		String str = (String) result;
+		assertTrue(str.equals("Some Object"));
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testGet_lessThanZero_failure() {
+		testList.get(-1);
+	}
+	
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void testGet_greaterThanSize_failure() {
+		assertTrue(1 > testList.size() - 1);
+		testList.get(1);
+	}
+
+}

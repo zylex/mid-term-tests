@@ -5,6 +5,17 @@
 <fullyQualifiedTypeName name="genlistx.tests.RetrieveDataTest"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="org.junit.Rule"/>
+<fullyQualifiedTypeName name="org.jmock.integration.junit4.JUnitRuleMockery"/>
+<fullyQualifiedTypeName name="cph.business.ExchangeRate"/>
+<fullyQualifiedTypeName name="cph.business.Currency"/>
+<fullyQualifiedTypeName name="dk.cphbusiness.Board"/>
+<fullyQualifiedTypeName name="dk.cphbusiness.Piece"/>
+<fullyQualifiedTypeName name="org.jmock.api.Expectation"/>
+<fullyQualifiedTypeName name="org.jmock.Expectations"/>
+<fullyQualifiedTypeName name="dk.cphbusiness.Square"/>
+<fullyQualifiedTypeName name="dk.cphbusiness.Player"/>
+<fullyQualifiedTypeName name="dk.cphbusiness.Die"/>
 </qualifiedTypeNameHistroy>

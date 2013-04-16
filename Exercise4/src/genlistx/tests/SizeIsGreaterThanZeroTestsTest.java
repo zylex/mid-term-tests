@@ -23,18 +23,22 @@ public class SizeIsGreaterThanZeroTestsTest {
 
 	@Test
 	public void testAddObject_successfullyAdded() throws Exception {
-		testList.add(2, "Another Object");
+		testList.add(3, "Another Object");
 		assertTrue(testList.size() == 4);
+		Object obj = testList.get(3);
+		assertTrue(obj instanceof String);
+		String str = (String) obj;
+		assertTrue(str.equals("Another Object"));
 	}
 
 	@Test (expected = IndexOutOfBoundsException.class)
 	public void testAddObject_indexOutOfBounds() {
-		testList.add(-1, new Object());
+		testList.add(3, new Object());
 	}
 
 	@Test(expected = IndexOutOfBoundsException.class)
 	public void testRemoveObject_indexOutOfBounds() {
-		testList.remove(-1);
+		testList.remove(3);
 	}
 	
 	@Test

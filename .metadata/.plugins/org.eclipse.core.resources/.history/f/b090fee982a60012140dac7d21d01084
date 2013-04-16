@@ -1,0 +1,17 @@
+import static org.junit.Assert.*;
+
+import org.jmock.integration.junit4.JUnitRuleMockery;
+import org.junit.Rule;
+import org.junit.Test;
+
+
+public class PlayerTest {
+	
+	@Rule public JUnitRuleMockery context = new JUnitRuleMockery(); 
+
+	@Test
+	public void testTakeTurn() {
+		
+	}
+
+}
